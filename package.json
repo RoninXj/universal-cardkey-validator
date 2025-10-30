@@ -1,0 +1,38 @@
+{
+  "name": "universal-cardkey-validator",
+  "version": "1.0.0",
+  "description": "通用卡密验证模块 - 适用于任何需要卡密验证的脚本项目，支持青龙面板",
+  "main": "cardkey-validator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cardkey",
+    "validator",
+    "authentication",
+    "verification",
+    "qinglong",
+    "universal",
+    "script",
+    "automation"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.88.2"
+  },
+  "peerDependencies": {
+    "request": "^2.88.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/universal-cardkey-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/universal-cardkey-validator/issues"
+  },
+  "homepage": "https://github.com/your-username/universal-cardkey-validator#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
