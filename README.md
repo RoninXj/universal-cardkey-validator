@@ -5,44 +5,44 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D12.0.0-brightgreen)](https://nodejs.org/)
 
-## 📚 快速导�?
+## 📚 快速导航
 
-### 🚀 快速开�?
-- **[5分钟快速开始](QUICK_START.md)** - 最快上手方�?�?
+### 🚀 快速开始
+- **[5分钟快速开始](QUICK_START.md)** - 最快上手方式 ⭐
 
 ### 📖 完整文档
-- **[完整 API 文档](README-UNIVERSAL.md)** - 详细�?API 说明和使用示�?
-- **[模块使用指南](CARDKEY_MODULE_GUIDE.md)** - 模块化集成指�?
+- **[完整 API 文档](README-UNIVERSAL.md)** - 详细的 API 说明和使用示例
+- **[模块使用指南](CARDKEY_MODULE_GUIDE.md)** - 模块化集成指南
 - **[安装部署指南](INSTALL_GUIDE.md)** - 完整的安装和部署流程
 - **[青龙面板指南](QINGLONG_GUIDE.md)** - 青龙面板专用指南
-- **[文档索引](DOCUMENTATION_INDEX.md)** - 所有文档导�?
+- **[文档索引](DOCUMENTATION_INDEX.md)** - 所有文档导航
 
 ### 📝 其他文档
 - **[更新日志](CHANGELOG.md)** - 版本更新记录
 - **[公网访问配置](PUBLIC_ACCESS_GUIDE.md)** - 公网访问配置指南
 
-## �?特�?
+## ✨ 特性
 
-- 🔐 **通用性强** - 适用于任何脚本项目，不限于特定平�?
-- 🚀 **简单易�?* - 几行代码即可集成
-- 💾 **智能缓存** - 自动缓存验证结果，减少网络请�?
-- ⚙️ **高度可配�?* - 支持自定义验证接口、参数、请求头�?
+- 🔐 **通用性强** - 适用于任何脚本项目，不限于特定平台
+- 🚀 **简单易用** - 几行代码即可集成
+- 💾 **智能缓存** - 自动缓存验证结果，减少网络请求
+- ⚙️ **高度可配置** - 支持自定义验证接口、参数、请求头等
 - 🎯 **青龙面板友好** - 完美支持青龙面板环境
-- 📝 **完善的错误处�?* - 详细的错误信息和状态反�?
+- 📝 **完善的错误处理** - 详细的错误信息和状态反馈
 
 ## 📦 安装
 
 ```bash
-# �?GitHub 安装
+# 从 GitHub 安装
 npm install github:RoninXj/universal-cardkey-validator#v1.0.0
 ```
 
-## 🚀 快速使�?
+## 🚀 快速使用
 
 ```javascript
 const { initializeCardKeyValidator, getCardKeyValidator } = require('universal-cardkey-validator');
 
-// 初始�?
+// 初始化
 initializeCardKeyValidator();
 
 // 使用
@@ -55,7 +55,7 @@ async function main() {
         return;
     }
     
-    console.log('�?验证成功');
+    console.log('✅ 验证成功');
     // 你的业务逻辑...
 }
 
@@ -68,7 +68,7 @@ main();
 # 必需
 CARD_KEY=your_card_key_here
 
-# 可�?
+# 可选
 VERIFY_URL=https://your-api.com/verify
 VERIFY_CACHE_TIMEOUT=3600
 DEV_MODE=1
@@ -78,8 +78,8 @@ DEV_MODE=1
 
 ```
 cardkey-module/
-├── README.md                    # 本文�?- 项目概览
-├── QUICK_START.md              # 快速开始指�?
+├── README.md                    # 本文件 - 项目概览
+├── QUICK_START.md              # 快速开始指南
 ├── README-UNIVERSAL.md         # 完整 API 文档
 ├── CARDKEY_MODULE_GUIDE.md     # 模块使用指南
 ├── INSTALL_GUIDE.md            # 安装部署指南
@@ -94,18 +94,18 @@ cardkey-module/
 
 ## 💡 使用场景
 
-- �?快手脚本
-- �?抖音脚本
-- �?爬虫脚本
-- �?自动化脚�?
-- �?青龙面板脚本
-- �?任何需要卡密验证的 Node.js 项目
+- ✅ 快手脚本
+- ✅ 抖音脚本
+- ✅ 爬虫脚本
+- ✅ 自动化脚本
+- ✅ 青龙面板脚本
+- ✅ 任何需要卡密验证的 Node.js 项目
 
 ## 🎯 适用人群
 
-- 脚本开发�?
+- 脚本开发者
 - 青龙面板用户
-- 自动化工具开发�?
+- 自动化工具开发者
 - 需要卡密验证的项目
 
 ## 📞 需要帮助？
@@ -115,13 +115,13 @@ cardkey-module/
 3. 查看 [文档索引](DOCUMENTATION_INDEX.md)
 4. 启用调试模式：`export DEV_MODE=1`
 
-## 📄 许可�?
+## 📄 许可证
 
 MIT License
 
 ## 🤝 贡献
 
-欢迎提交 Issue �?Pull Request�?
+欢迎提交 Issue 和 Pull Request！
 
 ---
 

@@ -1,4 +1,4 @@
-# 版本历史
+﻿# 版本历史
 
 ## 📦 当前版本：v1.0.2
 
@@ -31,8 +31,8 @@ git tag -a v1.0.2 -m "v1.0.2 - 更新作者信息"
 
 **修复：**
 - 修正所有文档中的 GitHub 仓库地址
-  - 从 `your-username` 改为 `RoninXj`
-  - 从 `kuaishou-cardkey-validator` 改为 `universal-cardkey-validator`
+  - 从 `RoninXj` 改为 `RoninXj`
+  - 从 `universal-cardkey-validator` 改为 `universal-cardkey-validator`
 - 修正分支名称从 `main` 改为 `master`
 - 更新 `package.json` 中的仓库信息和作者信息
 - 修正所有 GitHub Raw URL 中的分支引用
