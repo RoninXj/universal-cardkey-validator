@@ -11,7 +11,8 @@
 - **[5分钟快速开始](QUICK_START.md)** - 最快上手方式 ⭐
 
 ### 📖 完整文档
-- **[完整 API 文档](README-UNIVERSAL.md)** - 详细的 API 说明和使用示例
+- **[完整 API 文档](README-UNIVERSAL.md)** - 详细的 API 说明和使用示例（Node.js）
+- **[Python 使用指南](PYTHON_GUIDE.md)** - Python 版本使用指南 🐍
 - **[模块使用指南](CARDKEY_MODULE_GUIDE.md)** - 模块化集成指南
 - **[安装部署指南](INSTALL_GUIDE.md)** - 完整的安装和部署流程
 - **[青龙面板指南](QINGLONG_GUIDE.md)** - 青龙面板专用指南
@@ -32,12 +33,28 @@
 
 ## 📦 安装
 
+### Node.js 版本
+
 ```bash
 # 从 GitHub 安装
-npm install github:RoninXj/universal-cardkey-validator#v1.0.0
+npm install github:RoninXj/universal-cardkey-validator#v1.0.2
 ```
 
+### Python 版本 🐍
+
+```bash
+# 下载 Python 模块文件
+wget https://raw.githubusercontent.com/RoninXj/universal-cardkey-validator/master/cardkey_validator.py
+
+# 安装依赖
+pip install requests
+```
+
+查看 [Python 使用指南](PYTHON_GUIDE.md) 了解详细信息。
+
 ## 🚀 快速使用
+
+### Node.js 示例
 
 ```javascript
 const { initializeCardKeyValidator, getCardKeyValidator } = require('universal-cardkey-validator');
