@@ -9,7 +9,7 @@
  * - 支持自定义请求参数
  * - 完善的错误处理
  * 
- * @author Your Name
+ * @author Roninxj
  * @version 1.0.0
  * @license MIT
  */
@@ -39,7 +39,7 @@ class CardKeyValidator {
         this.customHeaders = options.customHeaders || {};
         this.timeout = options.timeout || 10000;
         this.silent = options.silent || false;
-        
+
         this.isVerified = false;
         this.verifyTime = null;
         this.verifyResult = null;
@@ -66,7 +66,7 @@ class CardKeyValidator {
             this.isVerified = true;
             this.verifyTime = Date.now();
             this.verifyResult = result;
-            
+
             if (!this.silent) {
                 console.log("✅ 卡密验证成功");
             }
@@ -215,7 +215,7 @@ let globalCardKeyValidator = null;
 function initializeCardKeyValidator(options = {}) {
     const required = options.required !== false; // 默认为 true
     const envKeys = options.envKeys || ['CARD_KEY', 'km'];
-    
+
     // 从环境变量中获取卡密
     let cardKey = null;
     for (const key of envKeys) {
@@ -237,11 +237,11 @@ function initializeCardKeyValidator(options = {}) {
     }
 
     globalCardKeyValidator = new CardKeyValidator(cardKey, options);
-    
+
     if (!options.silent) {
         console.log("🔑 卡密验证器已初始化");
     }
-    
+
     return globalCardKeyValidator;
 }
 
@@ -274,7 +274,7 @@ function addCardKeyToRequest(requestData, validator = null) {
     if (!v) {
         throw new Error("卡密验证器未初始化");
     }
-    
+
     return {
         ...requestData,
         card_key: v.cardKey
@@ -293,13 +293,13 @@ async function verifyAndAddCardKey(requestData, validator = null) {
         console.log("❌ 卡密验证器未初始化");
         return null;
     }
-    
+
     const verifyResult = await v.verify();
     if (!verifyResult.success) {
         console.log("❌ 卡密验证失败: " + verifyResult.message);
         return null;
     }
-    
+
     return addCardKeyToRequest(requestData, v);
 }
 
