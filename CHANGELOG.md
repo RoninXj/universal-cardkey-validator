@@ -1,6 +1,23 @@
 ﻿# 更新日志
 
-所有重要的更改都会记录在这个文件中�?
+所有重要的更改都会记录在这个文件中。
+
+## [1.0.2] - 2024-10-30
+
+### 🔧 修复
+- 更新 cardkey-validator.js 中的作者信息
+
+---
+
+## [1.0.1] - 2024-10-30
+
+### 🔧 修复
+- 修正所有文档中的 GitHub 仓库地址（RoninXj/universal-cardkey-validator）
+- 修正分支名称从 main 改为 master
+- 修正 package.json 中的仓库信息和作者信息
+- 修正所有 GitHub Raw URL 中的分支引用
+
+---
 
 ## [1.0.0] - 2024-10-30
 
@@ -168,7 +185,9 @@ Copyright (c) 2024 [RoninXj]
 
 - GitHub: https://github.com/RoninXj/universal-cardkey-validator
 - Issues: https://github.com/RoninXj/universal-cardkey-validator/issues
+- 作者: Roninxj
 
 ---
 
 **最后更新：** 2024-10-30
+**当前版本：** v1.0.2
