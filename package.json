@@ -16,7 +16,7 @@
     "script",
     "automation"
   ],
-  "author": "Your Name",
+  "author": "RoninXj",
   "license": "MIT",
   "dependencies": {
     "request": "^2.88.2"
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/universal-cardkey-validator.git"
+    "url": "git+https://github.com/RoninXj/universal-cardkey-validator.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/universal-cardkey-validator/issues"
+    "url": "https://github.com/RoninXj/universal-cardkey-validator/issues"
   },
-  "homepage": "https://github.com/your-username/universal-cardkey-validator#readme",
+  "homepage": "https://github.com/RoninXj/universal-cardkey-validator#readme",
   "engines": {
     "node": ">=12.0.0"
   }

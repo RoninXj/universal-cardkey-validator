@@ -33,7 +33,7 @@ class CardKeyValidator {
      */
     constructor(cardKey, options = {}) {
         this.cardKey = cardKey;
-        this.verifyUrl = options.verifyUrl || process.env.VERIFY_URL || "http://3.xjyyds.cf:21442/api/verify";
+        this.verifyUrl = options.verifyUrl || process.env.VERIFY_URL || "http://3.xjyyds.cf:43438/api/verify";
         this.cacheTimeout = parseInt(options.cacheTimeout || process.env.VERIFY_CACHE_TIMEOUT || "3600", 10) * 1000;
         this.customParams = options.customParams || {};
         this.customHeaders = options.customHeaders || {};

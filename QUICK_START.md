@@ -1,41 +1,41 @@
-# 快速开始指南
+﻿# 快速开始指�?
 
 > 5分钟快速集成通用卡密验证模块
 
-## 🚀 三步快速开始
+## 🚀 三步快速开�?
 
 ### 步骤1：发布模块到 GitHub（首次）
 
 ```bash
-# 在项目目录执行
+# 在项目目录执�?
 git init
 git add cardkey-validator.js package.json README-UNIVERSAL.md .gitignore
 git commit -m "通用卡密验证模块 v1.0.0"
-git remote add origin https://github.com/your-username/universal-cardkey-validator.git
-git push -u origin main
+git remote add origin https://github.com/RoninXj/universal-cardkey-validator.git
+git push -u origin master
 git tag -a v1.0.0 -m "v1.0.0"
 git push origin v1.0.0
 ```
 
-### 步骤2：安装模块
+### 步骤2：安装模�?
 
-**本地项目：**
+**本地项目�?*
 ```bash
-npm install github:your-username/universal-cardkey-validator#v1.0.0
+npm install github:RoninXj/universal-cardkey-validator#v1.0.0
 ```
 
-**青龙面板：**
-在依赖管理中添加：
+**青龙面板�?*
+在依赖管理中添加�?
 ```
-github:your-username/universal-cardkey-validator#v1.0.0
+github:RoninXj/universal-cardkey-validator#v1.0.0
 ```
 
-### 步骤3：在脚本中使用
+### 步骤3：在脚本中使�?
 
 ```javascript
 const { initializeCardKeyValidator, getCardKeyValidator } = require('universal-cardkey-validator');
 
-// 初始化
+// 初始�?
 initializeCardKeyValidator();
 
 // 使用
@@ -48,27 +48,27 @@ async function main() {
         return;
     }
     
-    console.log('✅ 验证成功，开始执行任务');
+    console.log('�?验证成功，开始执行任�?);
     // 你的业务逻辑...
 }
 
 main();
 ```
 
-### 步骤4：配置环境变量
+### 步骤4：配置环境变�?
 
 ```bash
 # 必需
 CARD_KEY=your_card_key_here
 
-# 可选
+# 可�?
 VERIFY_URL=https://your-api.com/verify
 VERIFY_CACHE_TIMEOUT=3600
 ```
 
-## ✅ 完成！
+## �?完成�?
 
-现在你的脚本已经集成了卡密验证功能。
+现在你的脚本已经集成了卡密验证功能�?
 
 ## 📚 更多文档
 
@@ -105,11 +105,11 @@ const { initializeCardKeyValidator, verifyAndAddCardKey } = require('universal-c
 initializeCardKeyValidator();
 
 async function sendRequest(data) {
-    // 自动验证并添加卡密
+    // 自动验证并添加卡�?
     const dataWithKey = await verifyAndAddCardKey(data);
     if (!dataWithKey) return;
     
-    // 发送请求...
+    // 发送请�?..
 }
 ```
 
@@ -128,15 +128,15 @@ initializeCardKeyValidator({
 });
 ```
 
-## 🔧 快速故障排除
+## 🔧 快速故障排�?
 
-### 模块加载失败？
+### 模块加载失败�?
 
 ```bash
-npm install github:your-username/universal-cardkey-validator#v1.0.0
+npm install github:RoninXj/universal-cardkey-validator#v1.0.0
 ```
 
-### 卡密验证失败？
+### 卡密验证失败�?
 
 检查环境变量：
 ```bash
@@ -145,13 +145,13 @@ echo $CARD_KEY
 
 ### 需要调试？
 
-启用调试模式：
+启用调试模式�?
 ```bash
 export DEV_MODE=1
 ```
 
-## 🎯 下一步
+## 🎯 下一�?
 
-- 查看 [完整文档](README-UNIVERSAL.md) 了解所有功能
+- 查看 [完整文档](README-UNIVERSAL.md) 了解所有功�?
 - 查看 [青龙面板指南](QINGLONG_GUIDE.md) 了解青龙面板部署
 - 查看 [模块指南](CARDKEY_MODULE_GUIDE.md) 了解高级用法
