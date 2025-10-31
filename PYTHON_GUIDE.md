@@ -53,11 +53,19 @@ pip install requests
 
 ### 青龙面板安装
 
-在青龙面板的依赖管理中添加：
+在青龙面板的依赖管理中添加（Python3 标签）：
 
+**完整 URL 格式（必须）：**
 ```
 git+https://github.com/RoninXj/universal-cardkey-validator.git
 ```
+
+**指定版本：**
+```
+git+https://github.com/RoninXj/universal-cardkey-validator.git@v1.1.0
+```
+
+**注意：** Python 依赖必须使用完整 URL 格式，不支持简短格式。
 
 或使用命令行：
 

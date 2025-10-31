@@ -2,6 +2,52 @@
 
 所有重要的更改都会记录在这个文件中。
 
+## [1.1.0] - 2024-10-30
+
+### 🎉 重大更新
+
+#### 新增功能
+- ✨ **Python 支持** - 添加完整的 Python 版本模块
+- ✨ **pip 安装** - 支持通过 pip 直接从 GitHub 安装
+- ✨ **完整示例** - 添加 Node.js 和 Python 的完整使用示例
+- ✨ **setup.py** - Python 包配置文件
+- ✨ **requirements.txt** - Python 依赖管理
+
+#### 改进
+- 🔒 **HTTPS 支持** - 将 API 地址更新为 HTTPS（`https://card.xjyyds.cf`）
+- 📝 **文档完善** - 添加 Python 使用指南和完整示例
+- 🐍 **跨语言支持** - 同时支持 Node.js 和 Python
+
+#### 文件变更
+- 新增 `cardkey_validator.py` - Python 核心模块
+- 新增 `setup.py` - Python 包配置
+- 新增 `requirements.txt` - Python 依赖
+- 新增 `MANIFEST.in` - Python 打包配置
+- 新增 `README_PYTHON.md` - Python 简要说明
+- 新增 `example_nodejs.js` - Node.js 完整示例
+- 新增 `example_python.py` - Python 完整示例
+- 更新 `PYTHON_GUIDE.md` - 添加 pip 安装说明
+- 更新所有文档 - API 地址改为 HTTPS
+
+---
+
+## [1.0.2] - 2024-10-30
+
+### 🔧 修复
+- 更新 cardkey-validator.js 中的作者信息
+
+---
+
+## [1.0.1] - 2024-10-30
+
+### 🔧 修复
+- 修正所有文档中的 GitHub 仓库地址
+- 修正分支名称从 main 改为 master
+- 更新 package.json 中的仓库信息和作者信息
+- 修正所有 GitHub Raw URL 中的分支引用
+
+---
+
 ## [1.0.0] - 2024-10-30
 
 ### 🎉 首次发布

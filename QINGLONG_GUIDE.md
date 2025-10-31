@@ -5,11 +5,19 @@
 ## 📚 文档导航
 
 - **[快速开始](QUICK_START.md)** - 5分钟快速集成
-- **[完整文档](README-UNIVERSAL.md)** - 完整 API 文档
+- **[完整文档](README-UNIVERSAL.md)** - 完整 API 文档（Node.js）
+- **[Python 指南](PYTHON_GUIDE.md)** - Python 版本使用指南 🐍
 - **[模块指南](CARDKEY_MODULE_GUIDE.md)** - 模块化使用指南
 - **[安装指南](INSTALL_GUIDE.md)** - 安装和部署指南
 - **[青龙面板](QINGLONG_GUIDE.md)** - 你正在阅读 ⭐
+- **[安装故障排除](QINGLONG_INSTALL_TROUBLESHOOTING.md)** - GitHub 访问问题解决方案 🔧
 - **[文档索引](DOCUMENTATION_INDEX.md)** - 所有文档导航
+
+## 🔖 快速跳转
+
+- [Node.js 脚本使用](#📝-方案1使用依赖管理推荐)
+- [Python 脚本使用](#🐍-python-脚本使用方法)
+- [安装失败？查看故障排除](QINGLONG_INSTALL_TROUBLESHOOTING.md) 🔧
 
 ## 📖 概述
 
@@ -20,16 +28,21 @@
 - 自动化脚本
 - 其他任何需要卡密验证的脚本
 
+**支持语言：**
+- ✅ Node.js / JavaScript
+- ✅ Python 🐍
+
 ## 🎯 方案对比
 
 ### 方案1：使用青龙面板依赖管理（推荐）⭐
 
 **优点：**
-- ✅ 标准的 npm 依赖管理方式
+- ✅ 标准的包管理方式（npm/pip）
 - ✅ 统一管理，便于更新和维护
 - ✅ 所有脚本共享同一模块，节省空间
 - ✅ 版本控制清晰，支持版本回滚
-- ✅ 符合 Node.js 最佳实践
+- ✅ 同时支持 Node.js 和 Python
+- ✅ 符合最佳实践
 
 **缺点：**
 - ❌ 需要在青龙面板配置依赖
@@ -40,6 +53,7 @@
 - 多个脚本使用同一模块
 - 长期维护的项目
 - 需要版本管理的场景
+- Node.js 或 Python 脚本
 
 ### 方案2：动态加载 GitHub 原始文件
 
@@ -125,12 +139,21 @@ git push origin v1.0.0
 2. 进入 **依赖管理**
 3. 选择 **NodeJs** 标签
 4. 点击 **新建依赖**
-5. 输入依赖名称：
+5. 在 **名称** 输入框中输入：
    ```
-   github:RoninXj/universal-cardkey-validator#v1.0.0
+   github:RoninXj/universal-cardkey-validator#v1.1.0
+   ```
+   或安装最新版本（不指定版本号）：
+   ```
+   github:RoninXj/universal-cardkey-validator
    ```
 6. 点击 **确定**
-7. 等待安装完成
+7. 等待安装完成（可在日志中查看安装进度）
+
+**注意：**
+- Node.js 依赖格式：`github:用户名/仓库名#版本号`
+- 使用 `#v1.1.0` 指定版本号
+- 不指定版本号则安装最新版本
 
 #### 方法B：通过命令行安装
 
@@ -189,6 +212,161 @@ VERIFY_CACHE_TIMEOUT=3600
 在青龙面板的 **定时任务** 中创建任务：
 - **名称**：你的脚本名称
 - **命令**：`task your-script.js`
+- **定时规则**：根据需求设置（如：`0 */2 * * *`）
+
+---
+
+## 📋 青龙面板依赖格式说明
+
+### 依赖名称格式
+
+**Node.js 依赖（简短格式）：**
+```
+github:RoninXj/universal-cardkey-validator#v1.1.0
+```
+- ✅ 支持简短格式
+- 格式：`github:用户名/仓库名#版本号`
+- 版本分隔符：`#`
+
+**Python 依赖（必须完整 URL）：**
+```
+git+https://github.com/RoninXj/universal-cardkey-validator.git@v1.1.0
+```
+- ⚠️ 必须使用完整 URL（pip 不支持简短格式）
+- 格式：`git+https://github.com/用户名/仓库名.git@版本号`
+- 必须以 `git+` 开头
+- 必须以 `.git` 结尾
+- 版本分隔符：`@`
+- 不指定版本号则安装最新版
+
+**格式对比：**
+
+| 语言 | 格式 | 示例 |
+|------|------|------|
+| Node.js | 简短 | `github:RoninXj/universal-cardkey-validator#v1.1.0` |
+| Python | 完整 URL | `git+https://github.com/RoninXj/universal-cardkey-validator.git@v1.1.0` |
+
+---
+
+## 🐍 Python 脚本使用方法
+
+### 步骤1：在青龙面板中安装 Python 依赖
+
+#### 方法A：通过 Web 界面（推荐）
+
+1. 登录青龙面板
+2. 进入 **依赖管理**
+3. 选择 **Python3** 标签
+4. 点击 **新建依赖**
+5. 在 **名称** 输入框中输入：
+
+   **安装最新版本：**
+   ```
+   git+https://github.com/RoninXj/universal-cardkey-validator.git
+   ```
+   
+   **安装指定版本：**
+   ```
+   git+https://github.com/RoninXj/universal-cardkey-validator.git@v1.1.0
+   ```
+
+6. 点击 **确定**
+7. 等待安装完成（可在日志中查看安装进度）
+
+**重要提示：** 
+- ⚠️ 必须使用完整 URL 格式（以 `git+` 开头，以 `.git` 结尾）
+- ❌ 不支持简短格式（如 `RoninXj/universal-cardkey-validator`）
+- ✅ 使用 `@v1.1.0` 可以指定版本号
+- ✅ 不指定版本号则安装最新版本
+
+#### 方法B：通过命令行
+
+```bash
+# 进入青龙容器
+docker exec -it qinglong bash
+
+# 安装 Python 模块
+pip3 install git+https://github.com/RoninXj/universal-cardkey-validator.git
+```
+
+**如果 GitHub 访问失败，使用镜像加速：**
+```bash
+# 使用 ghproxy 镜像
+pip3 install git+https://ghproxy.com/https://github.com/RoninXj/universal-cardkey-validator.git
+```
+
+**或者手动下载文件：**
+```bash
+# 下载模块文件
+wget https://ghproxy.com/https://raw.githubusercontent.com/RoninXj/universal-cardkey-validator/master/cardkey_validator.py
+
+# 放到脚本同目录，直接在脚本中导入使用
+```
+
+### 步骤2：配置环境变量
+
+在青龙面板的 **环境变量** 中添加：
+
+```bash
+# 必需：卡密
+CARD_KEY=your_card_key_here
+
+# 可选：验证接口地址
+VERIFY_URL=https://card.xjyyds.cf/api/verify
+
+# 可选：缓存超时时间（秒）
+VERIFY_CACHE_TIMEOUT=3600
+```
+
+### 步骤3：在 Python 脚本中使用
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from cardkey_validator import initialize_card_key_validator, get_card_key_validator
+
+# 初始化
+initialize_card_key_validator()
+
+def main():
+    validator = get_card_key_validator()
+    
+    if not validator:
+        print('卡密验证器未初始化，退出脚本')
+        return
+    
+    result = validator.verify()
+    
+    if not result['success']:
+        print(f'卡密验证失败: {result["message"]}，退出脚本')
+        return
+    
+    print('卡密验证成功，开始执行任务')
+    # 执行你的任务...
+
+if __name__ == '__main__':
+    main()
+```
+
+### 步骤4：上传 Python 脚本
+
+**方法A：通过 Web 界面**
+1. 进入青龙面板的 **脚本管理**
+2. 点击 **新建脚本** 或 **上传**
+3. 选择或粘贴你的 Python 脚本
+4. 保存
+
+**方法B：通过命令行**
+```bash
+docker cp your_script.py qinglong:/ql/scripts/
+```
+
+### 步骤5：创建定时任务
+
+在青龙面板的 **定时任务** 中创建：
+- **名称**：你的脚本名称
+- **命令**：`task your_script.py`
 - **定时规则**：根据需求设置（如：`0 */2 * * *`）
 
 ---
@@ -481,9 +659,11 @@ docker restart qinglong
 
 | 场景 | 推荐方案 | 理由 |
 |------|---------|------|
+| **Node.js 脚本** | 方案1（依赖管理）⭐ | 标准的 npm 依赖管理 |
+| **Python 脚本** | Python 依赖管理 ⭐ | 标准的 pip 依赖管理 |
 | **多个脚本使用** | 方案1（依赖管理）⭐ | 统一管理，便于维护和更新 |
 | **长期维护项目** | 方案1（依赖管理）⭐ | 版本控制清晰，符合最佳实践 |
-| **网络稳定环境** | 方案1（依赖管理）⭐ | 标准的 npm 依赖管理方式 |
+| **网络稳定环境** | 方案1（依赖管理）⭐ | 标准的包管理方式 |
 | **快速测试开发** | 方案2（动态加载） | 无需预先安装，快速部署 |
 | **单个脚本项目** | 方案2（动态加载） | 脚本相对独立，便于分发 |
 | **网络不稳定** | 方案3（内嵌代码） | 完全离线运行，最稳定 |
@@ -491,18 +671,21 @@ docker restart qinglong
 
 ### 我的推荐
 
-**首选：方案1（依赖管理）**
+**Node.js 脚本：**
+- **首选：** 方案1（npm 依赖管理）
+- **备选：** 方案2（动态加载）
+- **最后：** 方案3（内嵌代码）
+
+**Python 脚本：** 🐍
+- **首选：** Python 依赖管理（pip 安装）⭐
+- **备选：** 直接下载 .py 文件
+- **最后：** 内嵌代码到脚本中
+
+**通用建议：**
 - 这是最标准、最专业的方式
 - 适合大多数场景
 - 便于长期维护
-
-**备选：方案2（动态加载）**
-- 适合快速测试
-- 适合单个脚本项目
-
-**最后：方案3（内嵌代码）**
-- 仅在网络受限时使用
-- 维护成本最高
+- 支持版本管理
 
 ## 📋 完整示例
 
@@ -652,7 +835,69 @@ async function runMainScript() {
 
 ## 🔧 故障排除
 
-### 问题1：无法访问 GitHub
+### 问题1：Python 依赖安装失败 - GitHub 访问超时
+
+**症状：**
+```
+fatal: unable to access 'https://github.com/...': GnuTLS recv error (-110)
+error: subprocess-exited-with-error
+```
+
+**原因：** 青龙面板服务器无法访问 GitHub 或网络不稳定
+
+**解决方案：**
+
+#### 方案A：使用 GitHub 镜像（推荐）⭐
+
+```bash
+# 进入青龙容器
+docker exec -it qinglong bash
+
+# 使用镜像加速安装
+pip3 install git+https://ghproxy.com/https://github.com/RoninXj/universal-cardkey-validator.git
+```
+
+#### 方案B：手动下载安装
+
+```bash
+# 1. 下载文件
+wget https://raw.githubusercontent.com/RoninXj/universal-cardkey-validator/master/cardkey_validator.py
+
+# 或使用镜像
+wget https://ghproxy.com/https://raw.githubusercontent.com/RoninXj/universal-cardkey-validator/master/cardkey_validator.py
+
+# 2. 放到脚本同目录，直接导入使用
+```
+
+#### 方案C：配置 Git 代理
+
+```bash
+# 进入青龙容器
+docker exec -it qinglong bash
+
+# 配置 Git 代理（如果有代理服务器）
+git config --global http.proxy http://proxy_server:port
+git config --global https.proxy https://proxy_server:port
+
+# 然后重新安装
+pip3 install git+https://github.com/RoninXj/universal-cardkey-validator.git
+```
+
+#### 方案D：增加超时时间
+
+```bash
+# 进入青龙容器
+docker exec -it qinglong bash
+
+# 设置更长的超时时间
+export GIT_HTTP_LOW_SPEED_LIMIT=1000
+export GIT_HTTP_LOW_SPEED_TIME=600
+
+# 重新安装
+pip3 install git+https://github.com/RoninXj/universal-cardkey-validator.git
+```
+
+### 问题2：Node.js 依赖安装失败 - GitHub 访问超时
 
 **症状：**
 ```
@@ -660,12 +905,9 @@ Error: getaddrinfo ENOTFOUND raw.githubusercontent.com
 ```
 
 **解决方案：**
-1. 使用 GitHub 镜像加速：
-   ```
-   https://ghproxy.com/https://raw.githubusercontent.com/...
-   ```
+1. 使用 GitHub 镜像加速
 2. 或使用方案3（内嵌代码），完全离线运行
-3. 或配置 GitHub 代理
+3. 或配置 npm 代理
 
 ### 问题2：依赖安装失败
 
