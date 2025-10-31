@@ -43,11 +43,11 @@ npm install github:RoninXj/universal-cardkey-validator#v1.0.2
 ### Python 版本 🐍
 
 ```bash
-# 下载 Python 模块文件
-wget https://raw.githubusercontent.com/RoninXj/universal-cardkey-validator/master/cardkey_validator.py
+# 从 GitHub 直接安装（推荐）
+pip install git+https://github.com/RoninXj/universal-cardkey-validator.git
 
-# 安装依赖
-pip install requests
+# 或安装指定版本
+pip install git+https://github.com/RoninXj/universal-cardkey-validator.git@v1.0.0
 ```
 
 查看 [Python 使用指南](PYTHON_GUIDE.md) 了解详细信息。
@@ -79,6 +79,33 @@ async function main() {
 main();
 ```
 
+查看 [完整 Node.js 示例](example_nodejs.js)
+
+### Python 示例 🐍
+
+```python
+import os
+from cardkey_validator import initialize_card_key_validator, get_card_key_validator
+
+# 设置环境变量
+os.environ['CARD_KEY'] = 'your_card_key_here'
+
+# 初始化
+initialize_card_key_validator()
+
+# 使用
+validator = get_card_key_validator()
+result = validator.verify()
+
+if result['success']:
+    print('✅ 验证成功')
+    # 你的业务逻辑...
+else:
+    print(f'❌ 验证失败: {result["message"]}')
+```
+
+查看 [完整 Python 示例](example_python.py)
+
 ## 🌍 环境变量
 
 ```bash
@@ -104,9 +131,15 @@ cardkey-module/
 ├── DOCUMENTATION_INDEX.md      # 文档索引
 ├── CHANGELOG.md                # 更新日志
 ├── PUBLIC_ACCESS_GUIDE.md      # 公网访问配置
-├── cardkey-validator.js        # 核心模块代码
+├── cardkey-validator.js        # 核心模块代码（Node.js）
+├── cardkey_validator.py        # 核心模块代码（Python）🐍
 ├── cardkey-loader-simple.js    # 简单加载器
-└── package.json                # 模块配置
+├── example_nodejs.js           # Node.js 完整示例
+├── example_python.py           # Python 完整示例 🐍
+├── package.json                # Node.js 模块配置
+├── setup.py                    # Python 包配置 🐍
+├── requirements.txt            # Python 依赖 🐍
+└── MANIFEST.in                 # Python 打包配置 🐍
 ```
 
 ## 💡 使用场景

@@ -1,0 +1,5 @@
+include README_PYTHON.md
+include PYTHON_GUIDE.md
+include LICENSE
+include requirements.txt
+include cardkey_validator.py

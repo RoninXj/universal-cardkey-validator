@@ -75,7 +75,7 @@ async function requestSignService(requestData, description) {
 ## 环境变量
 
 - `CARD_KEY` 或 `km`: 卡密（必需）
-- `VERIFY_URL`: 验证接口地址（可选，默认: http://3.xjyyds.cf:21442/api/verify）
+- `VERIFY_URL`: 验证接口地址（可选，默认: https://card.xjyyds.cf/api/verify）
 - `VERIFY_CACHE_TIMEOUT`: 缓存超时时间，单位秒（可选，默认: 3600）
 - `DEV_MODE`: 开发模式，设置为 "1" 或 "true" 启用调试日志（可选）
 

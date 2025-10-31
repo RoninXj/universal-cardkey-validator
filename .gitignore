@@ -4,6 +4,37 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 虚拟环境
+venv/
+ENV/
+env/
+.venv
+
 # 缓存文件
 .cardkey-cache/
 .cardkey-validator-cache.js
@@ -27,10 +58,16 @@ Thumbs.db
 *.swp
 *.swo
 *~
+.pydevproject
+.project
+.settings/
 
 # 测试
 coverage/
 .nyc_output/
+.pytest_cache/
+.coverage
+htmlcov/
 
 # 临时文件
 tmp/

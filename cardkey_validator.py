@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 通用卡密验证模块 - Python 版本
@@ -43,7 +43,7 @@ class CardKeyValidator:
         options = options or {}
         
         # 配置
-        self.verify_url = options.get('verify_url') or os.getenv('VERIFY_URL', 'http://3.xjyyds.cf:21442/api/verify')
+        self.verify_url = options.get('verify_url') or os.getenv('VERIFY_URL', 'https://card.xjyyds.cf/api/verify')
         self.cache_timeout = int(options.get('cache_timeout') or os.getenv('VERIFY_CACHE_TIMEOUT', '3600')) * 1000
         self.custom_params = options.get('custom_params', {})
         self.custom_headers = options.get('custom_headers', {})

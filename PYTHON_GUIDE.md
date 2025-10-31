@@ -1,4 +1,4 @@
-# Python 脚本使用卡密模块指南
+﻿# Python 脚本使用卡密模块指南
 
 > 通用卡密验证模块 - Python 版本使用指南
 
@@ -17,27 +17,56 @@
 
 ## 📦 安装
 
-### 方法1：直接下载文件
+### 方法1：从 GitHub 直接安装（推荐）⭐
+
+```bash
+# 安装最新版本（会自动安装依赖）
+pip install git+https://github.com/RoninXj/universal-cardkey-validator.git
+
+# 或安装指定版本
+pip install git+https://github.com/RoninXj/universal-cardkey-validator.git@v1.0.0
+```
+
+### 方法2：从本地安装
+
+```bash
+# 克隆仓库
+git clone https://github.com/RoninXj/universal-cardkey-validator.git
+cd universal-cardkey-validator
+
+# 安装
+pip install .
+
+# 或开发模式安装（可编辑）
+pip install -e .
+```
+
+### 方法3：直接下载文件（不推荐）
 
 ```bash
 # 下载 Python 模块文件
 wget https://raw.githubusercontent.com/RoninXj/universal-cardkey-validator/master/cardkey_validator.py
 
-# 或使用 curl
-curl -O https://raw.githubusercontent.com/RoninXj/universal-cardkey-validator/master/cardkey_validator.py
-```
-
-### 方法2：从 GitHub 克隆
-
-```bash
-git clone https://github.com/RoninXj/universal-cardkey-validator.git
-cp universal-cardkey-validator/cardkey_validator.py ./
-```
-
-### 依赖安装
-
-```bash
+# 手动安装依赖
 pip install requests
+```
+
+### 青龙面板安装
+
+在青龙面板的依赖管理中添加：
+
+```
+git+https://github.com/RoninXj/universal-cardkey-validator.git
+```
+
+或使用命令行：
+
+```bash
+# 进入青龙容器
+docker exec -it qinglong bash
+
+# 安装依赖
+pip3 install git+https://github.com/RoninXj/universal-cardkey-validator.git
 ```
 
 ## 🚀 快速开始
@@ -376,16 +405,29 @@ if result['success']:
 
 ## 🎯 青龙面板使用
 
-### 1. 上传模块文件
+### 1. 安装模块
 
-将 `cardkey_validator.py` 上传到青龙面板的脚本目录：
+#### 方法A：通过 Web 界面（推荐）
+
+1. 登录青龙面板
+2. 进入 **依赖管理**
+3. 选择 **Python3** 标签
+4. 点击 **新建依赖**
+5. 输入依赖名称：
+   ```
+   git+https://github.com/RoninXj/universal-cardkey-validator.git
+   ```
+6. 点击 **确定**
+7. 等待安装完成
+
+#### 方法B：通过命令行
 
 ```bash
-# 方法1：通过 Web 界面上传
-# 在青龙面板的脚本管理中，点击上传，选择 cardkey_validator.py
+# 进入青龙容器
+docker exec -it qinglong bash
 
-# 方法2：通过命令行
-docker cp cardkey_validator.py qinglong:/ql/scripts/
+# 安装模块
+pip3 install git+https://github.com/RoninXj/universal-cardkey-validator.git
 ```
 
 ### 2. 配置环境变量
@@ -487,12 +529,18 @@ ModuleNotFoundError: No module named 'cardkey_validator'
 ```
 
 **解决方案：**
-1. 确认 `cardkey_validator.py` 在当前目录或 Python 路径中
-2. 或使用绝对导入：
-   ```python
-   import sys
-   sys.path.append('/path/to/module')
-   from cardkey_validator import initialize_card_key_validator
+1. 确认模块已安装：
+   ```bash
+   pip list | grep universal-cardkey-validator
+   ```
+2. 重新安装模块：
+   ```bash
+   pip install git+https://github.com/RoninXj/universal-cardkey-validator.git
+   ```
+3. 如果使用虚拟环境，确认已激活：
+   ```bash
+   source venv/bin/activate  # Linux/Mac
+   venv\Scripts\activate     # Windows
    ```
 
 ### 问题2：requests 模块未安装
@@ -540,7 +588,7 @@ def main():
     # 初始化卡密验证器
     print('\n1. 初始化卡密验证器...')
     initialize_card_key_validator({
-        'verify_url': 'http://3.xjyyds.cf:21442/api/verify',
+        'verify_url': 'https://card.xjyyds.cf/api/verify',
         'cache_timeout': 3600,
         'silent': False
     })

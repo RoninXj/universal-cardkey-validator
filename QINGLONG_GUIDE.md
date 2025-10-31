@@ -428,7 +428,7 @@ process.noDeprecation = true;
 class CardKeyValidator {
     constructor(cardKey, options = {}) {
         this.cardKey = cardKey;
-        this.verifyUrl = options.verifyUrl || process.env.VERIFY_URL || "http://3.xjyyds.cf:21442/api/verify";
+        this.verifyUrl = options.verifyUrl || process.env.VERIFY_URL || "https://card.xjyyds.cf/api/verify";
         this.cacheTimeout = parseInt(options.cacheTimeout || process.env.VERIFY_CACHE_TIMEOUT || "3600", 10) * 1000;
         this.isVerified = false;
         this.verifyTime = null;

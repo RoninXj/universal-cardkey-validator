@@ -222,7 +222,7 @@ km=your_card_key_here
 ### 4.2 可选变量（通用）
 
 ```bash
-# 验证接口地址（可选，默认：http://3.xjyyds.cf:21442/api/verify）
+# 验证接口地址（可选，默认：https://card.xjyyds.cf/api/verify）
 VERIFY_URL=https://your-api.com/verify
 
 # 缓存超时时间（可选，默认：3600秒）
